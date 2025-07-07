@@ -6,6 +6,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   {
     import = "astrocommunity.colorscheme.kanagawa-nvim",
@@ -13,7 +14,4 @@ return {
       theme = "lotus", -- Например, для варианта "wave"
     },
   },
-
-  import = "astrocommunity.pack.go",
-  -- import/override with your plugins folder
 }
