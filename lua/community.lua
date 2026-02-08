@@ -4,14 +4,14 @@
 
 ---@type LazySpec
 return {
-  "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.go" },
-  { import = "astrocommunity.colorscheme.catppuccin" },
-  {
-    import = "astrocommunity.colorscheme.kanagawa-nvim",
-    opts = {
-      theme = "lotus", -- Например, для варианта "wave"
-    },
-  },
+	"AstroNvim/astrocommunity",
+	{ import = "astrocommunity.pack.lua" },
+	{ import = "astrocommunity.pack.go" },
+	{ import = "astrocommunity.colorscheme.catppuccin" },
+	{
+		import = "astrocommunity.colorscheme.kanagawa-nvim",
+		opts = {
+			theme = "lotus", -- Например, для варианта "wave"
+		},
+	},
 }
