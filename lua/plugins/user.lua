@@ -77,18 +77,18 @@ return {
 			npairs.add_rules(
 				{
 					Rule("$", "$", { "tex", "latex" })
-						-- don't add a pair if the next character is %
-						:with_pair(cond.not_after_regex("%%"))
-						-- don't add a pair if  the previous character is xxx
-						:with_pair(
-							cond.not_before_regex("xxx", 3)
-						)
-						-- don't move right when repeat character
-						:with_move(cond.none())
-						-- don't delete if the next character is xx
-						:with_del(cond.not_after_regex("xx"))
-						-- disable adding a newline when you press <cr>
-						:with_cr(cond.none()),
+					-- don't add a pair if the next character is %
+							:with_pair(cond.not_after_regex("%%"))
+					-- don't add a pair if  the previous character is xxx
+							:with_pair(
+								cond.not_before_regex("xxx", 3)
+							)
+					-- don't move right when repeat character
+							:with_move(cond.none())
+					-- don't delete if the next character is xx
+							:with_del(cond.not_after_regex("xx"))
+					-- disable adding a newline when you press <cr>
+							:with_cr(cond.none()),
 				},
 				-- disable for .vim files, but it work for another filetypes
 				Rule("a", "a", "-vim")
@@ -97,13 +97,13 @@ return {
 	},
 
 	require("tabnine").setup({
-		disable_auto_comment = true, -- Отключает автоматические комментарии от Tabnine
-		accept_keymap = "<Tab>", -- Клавиша для принятия предложения (по умолчанию <Tab>)
-		dismiss_keymap = "<C-]>", -- Клавиша для отклонения предложения
-		debounce_ms = 800, -- Задержка перед показом предложений
+		disable_auto_comment = true,                         -- Отключает автоматические комментарии от Tabnine
+		accept_keymap = "<Tab>",                             -- Клавиша для принятия предложения (по умолчанию <Tab>)
+		dismiss_keymap = "<C-]>",                            -- Клавиша для отклонения предложения
+		debounce_ms = 800,                                   -- Задержка перед показом предложений
 		suggestion_color = { gui = "#808080", cterm = 244 }, -- Цвет предложений
 		exclude_filetypes = { "TelescopePrompt", "NvimTree" }, -- Исключить типы файлов
-		log_file_path = nil, -- Абсолютный путь к файлу логов Tabnine
+		log_file_path = nil,                                 -- Абсолютный путь к файлу логов Tabnine
 	}),
 
 	-- Добавляем LSP-сервер для Go (gopls) в mason-lspconfig
@@ -112,6 +112,32 @@ return {
 		opts = {
 			ensure_installed = {
 				"gopls",
+			},
+		},
+	},
+
+	-- Настройка gopls для увеличения ширины строк
+	{
+		"neovim/nvim-lspconfig",
+		opts = {
+			servers = {
+				gopls = {
+					settings = {
+						gopls = {
+							formatting = {
+								gofumpt = false,
+							},
+							hints = {
+								assignVariableTypes = true,
+								compositeLiteralFields = true,
+								constantValues = true,
+								functionTypeParameters = true,
+								parameterNames = true,
+								rangeVariableTypes = true,
+							},
+						},
+					},
+				},
 			},
 		},
 	},
