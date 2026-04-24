@@ -11,7 +11,7 @@ return {
 	{
 		import = "astrocommunity.colorscheme.kanagawa-nvim",
 		opts = {
-			theme = "lotus", -- Например, для варианта "wave"
+			theme = "wave", -- Например, для варианта "wave", "lotus"
 		},
 	},
 }

@@ -4,8 +4,6 @@
 ---@type LazySpec
 return {
 
-	-- == Examples of Adding Plugins ==
-
 	"andweeb/presence.nvim",
 	{
 		"ray-x/lsp_signature.nvim",
@@ -138,6 +136,22 @@ return {
 						},
 					},
 				},
+			},
+		},
+	},
+
+	{
+		"akinsho/toggleterm.nvim",
+		opts = {
+			shell = "kitty",
+			size = 20,
+			direction = "float",
+			close_on_exit = true,
+			start_in_insert = true,
+			float_opts = {
+				border = "single",
+				width = 120,
+				height = 30,
 			},
 		},
 	},
